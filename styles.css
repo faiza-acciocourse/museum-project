@@ -1,0 +1,464 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+* {
+    font-family: "Inter", sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #1A1C19;
+    padding: 5px 40px;
+}
+
+.header-container {
+    border: 1px solid #B1A592;
+    padding: 4px;
+    border-radius: 50px;
+}
+
+.menu-bar {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.btn {
+    border: 1px solid #B1A592;
+    padding: 7px;
+    border-radius: 50px;
+    background-color: #1A1C19;
+    color: #B1A592;
+    height: 40px;
+    transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+}
+
+.company {
+    width: 25%;
+    border: none;
+    background-color: #323025;
+}
+
+.collections {
+    width: 15%;
+}
+
+.menu {
+    width: 10%;
+}
+
+.events {
+    width: 10%;
+}
+
+.contact {
+    width: 10%;
+    margin-left: auto;
+}
+
+.btn:not(.company):hover {
+    background-color: #e0d6c2;
+    color: black;
+    transform: scale(1.03);
+}
+
+.museum-container {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-rows: repeat(2, 430px);
+    margin-top: 10px;
+    gap: 10px;
+}
+
+.museum-card {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    padding-bottom: 60px;
+    min-width: 0;
+}
+
+.birmingham {
+    grid-row: span 2;
+    border-radius: 30px;
+    background-color: #DFD6C5;
+    overflow: hidden;
+}
+
+.woman {
+    grid-column: span 2;
+    border-radius: 30px;
+    background-color: #8E886D;
+    overflow: hidden;
+}
+
+.portrait {
+    border-radius: 30px;
+    background-color: #916E58;
+    overflow: hidden;
+}
+
+.vintage {
+    border-radius: 30px;
+    background-color: #B1A48E;
+    overflow: hidden;
+}
+
+.tag {
+    height: fit-content;
+    width: fit-content;
+    border: 1px solid #323025;
+    border-radius: 50px;
+    padding: 5px 10px;
+    font-weight: 300;
+    margin: 20px;
+}
+
+h1 {
+    margin-left: 20px;
+    font-size: clamp(20px, 2vw, 27px);
+}
+
+hr {
+    border: none;
+    height: 1px;
+    background-color: #333333;
+    width: 100%;
+    margin: 0;
+    position: absolute;
+    bottom: 60px;
+    left: 0;
+}
+
+.get-started {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    height: 60px;
+    box-sizing: border-box;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+.arrow {
+    font-size: 25px;
+    font-weight: 900;
+    transition: transform 0.3s ease;
+}
+
+.museum-card:hover .arrow {
+    transform: translateX(8px);
+}
+
+.image-container {
+    overflow: hidden;
+}
+
+.image-container img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    margin: 0;
+    transition: transform 0.5s ease;
+}
+
+.image-container:hover img {
+    transform: scale(1.08);
+}
+
+.birmingham-image {
+    height: 740px;
+    margin: 10px;
+    border-radius: 20px;
+}
+
+.woman-container {
+    display: flex;
+    margin-left: 20px;
+    gap: 40px;
+    align-items: flex-start;
+}
+
+.woman-container p {
+    flex: 1;
+    min-width: 0;
+}
+
+.woman-container .image-container {
+    width: 50%;
+    height: 265px;
+    margin: 10px;
+    margin-top: -100px;
+    border-radius: 20px;
+    flex-shrink: 0;
+}
+
+.portrait-image {
+    height: 200px;
+    margin: 10px;
+    border-radius: 20px;
+}
+
+.portrait > p {
+    margin: 20px;
+}
+
+.vintage-container {
+    display: flex;
+    align-items: flex-start;
+}
+
+.vintage-container h1 {
+    min-width: 0;
+}
+
+.vintage-image {
+    width: 93px;
+    height: 93px;
+    margin-top: 0;
+    margin-left: auto;
+    margin-right: 20px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.vintage > p {
+    margin: 20px;
+}
+
+@media (max-width: 1200px) {
+
+    body {
+        padding: 5px 25px;
+    }
+
+    .museum-container {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .woman-container {
+        gap: 20px;
+    }
+
+    .woman-container .image-container {
+        width: 48%;
+        max-width: 530px;
+    }
+}
+
+@media (max-width: 900px) {
+
+    body {
+        padding: 5px 20px;
+    }
+
+    .museum-container {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-rows: auto;
+    }
+
+    .birmingham {
+        grid-column: 1;
+        grid-row: 1 / span 2;
+    }
+
+    .woman {
+        grid-column: 2;
+        grid-row: 1;
+    }
+
+    .portrait {
+        grid-column: 2;
+        grid-row: 2;
+    }
+
+    .vintage {
+        grid-column: 1 / span 2;
+        grid-row: 3;
+    }
+
+    .woman-container {
+        gap: 15px;
+        margin-left: 20px;
+        margin-right: 20px;
+        align-items: flex-start;
+    }
+
+    .woman-container p {
+        flex: 1;
+        min-width: 0;
+    }
+
+    .woman-container .image-container {
+        width: 48%;
+        height: 200px;
+        margin: 0;
+        margin-top: 0;
+        flex-shrink: 0;
+    }
+
+    .birmingham-image {
+        height: auto;
+        aspect-ratio: 450 / 740;
+    }
+
+    .portrait-image {
+        height: auto;
+        aspect-ratio: 450 / 200;
+    }
+
+    .vintage-image {
+        width: 75px;
+        height: 75px;
+        margin-top: -10px;
+        margin-right: 15px;
+    }
+}
+
+@media (max-width: 600px) {
+
+    body {
+        padding: 5px 10px;
+    }
+
+    .menu-bar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: nowrap;
+        gap: 4px;
+    }
+
+    .company {
+        display: block;
+        width: calc(100% - 70px);
+        flex: 1;
+    }
+
+    .menu {
+        display: block;
+        width: 65px;
+        flex: none;
+    }
+
+    .collections,
+    .events,
+    .contact {
+        display: none;
+    }
+
+    .museum-container {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-rows: auto;
+        gap: 8px;
+    }
+
+    .birmingham {
+        grid-column: 1 / span 2;
+        grid-row: 1;
+    }
+
+    .woman {
+        grid-column: 1 / span 2;
+        grid-row: 2;
+    }
+
+    .portrait {
+        grid-column: 1;
+        grid-row: 3;
+    }
+
+    .vintage {
+        grid-column: 2;
+        grid-row: 3;
+    }
+
+    .museum-card {
+        min-height: 0;
+    }
+
+    .birmingham-image {
+        height: auto;
+        aspect-ratio: 450 / 200;
+        margin: 10px;
+    }
+
+    .woman h1 {
+        font-size: 18px;
+        margin: 15px;
+        white-space: nowrap;
+    }
+
+    .woman-container {
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+        margin-left: 15px;
+        margin-right: 15px;
+        align-items: flex-start;
+    }
+
+    .woman-container p {
+        width: 55%;
+        flex: 1;
+        min-width: 0;
+        margin: 0;
+        font-size: 11px;
+        line-height: 1.25;
+    }
+
+    .woman-container .image-container {
+        width: 45%;
+        height: auto;
+        aspect-ratio: 530 / 265;
+        margin: 0;
+        flex-shrink: 0;
+        border-radius: 15px;
+    }
+
+    .portrait-image {
+        height: auto;
+        aspect-ratio: 450 / 200;
+    }
+
+    .portrait > p,
+    .vintage > p {
+        margin: 15px;
+        font-size: 11px;
+        line-height: 1.2;
+    }
+
+    .vintage-image {
+        width: 55px;
+        height: 55px;
+        margin-top: 0;
+        margin-right: 10px;
+    }
+
+    .tag {
+        margin: 15px;
+        padding: 4px 8px;
+        font-size: 11px;
+    }
+
+    h1 {
+        font-size: 18px;
+    }
+
+    .get-started {
+        padding: 15px;
+        height: 50px;
+        font-size: 12px;
+    }
+
+    hr {
+        bottom: 50px;
+    }
+
+    .arrow {
+        font-size: 20px;
+    }
+}
